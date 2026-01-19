@@ -17,6 +17,109 @@ html {
 /* =========================
    THEME VARIABLES
 ========================= */
+/* ===============================
+   THEME TOGGLE (UPDATED + FIXED)
+================================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: all 0.35s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(12deg);
+  box-shadow: 0 14px 45px var(--shadow-hover);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* wrapper */
+.theme-icon {
+  width: 26px;
+  height: 26px;
+  position: relative;
+}
+
+/* both svg icons */
+.theme-icon svg {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  transition: all 0.55s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  /* IMPORTANT: make SVG work with stroke & fill */
+  fill: none;
+  stroke: currentColor;
+}
+
+/* -------------------------------
+   SUN (Golden Yellow)
+-------------------------------- */
+.sun {
+  color: #FFD700; /* Golden Yellow */
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+/* -------------------------------
+   MOON (Soft White/Blue)
+-------------------------------- */
+.moon {
+  color: #E6EEFF;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.55) rotate(-90deg);
+
+  /* moon uses fill in SVG path */
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ✅ When DARK mode is ON -> show moon */
+body.dark .sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.55) rotate(90deg);
+}
+
+body.dark .moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+/* ✅ Optional: glowing hover effect */
+.theme-toggle:hover .sun {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.55));
+}
+
+.theme-toggle:hover .moon {
+  filter: drop-shadow(0 0 10px rgba(230, 238, 255, 0.55));
+}
+
+
 :root {
   /* Dark Theme (Default) */
   --bg-primary: radial-gradient(circle at top, #1f1f1f, #0b0b0b);
