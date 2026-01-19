@@ -305,6 +305,198 @@ h1 span {
 }
 
 /* =========================
+   PROJECT DETAILS STYLING
+========================= */
+
+.project-card h4 {
+  font-size: 13px;
+  margin-top: 12px;
+  font-weight: 700;
+  color: #00d4ff;
+}
+
+.project-desc {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.project-features ul,
+.project-learn ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.project-features li,
+.project-learn li {
+  font-size: 12.8px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Tech tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tech-tags span {
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  transition: 0.25s ease;
+}
+
+.tech-tags span:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 212, 255, 0.22);
+}
+
+/* Buttons */
+.project-links {
+  margin-top: 14px;
+}
+
+.project-links .btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.12);
+  color: inherit;
+}
+
+.project-links .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 212, 255, 0.7);
+}
+
+.project-title-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.project-title-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.20);
+}
+
+.project-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.project-title-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: inherit;
+  position: relative;
+}
+
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-title-text::after {
+  width: 100%;
+}
+/* ===============================
+   PROJECT TITLE LOGO + ANIMATION
+================================ */
+
+.project-title-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.project-title-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.20);
+}
+
+.project-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.project-title-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: inherit;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-title-text::after {
+  width: 100%;
+}
+
+
+/* =========================
    PROJECTS
 ========================= */
 .cards {
@@ -367,6 +559,66 @@ h1 span {
   font-size: 0.95rem;
   color: var(--text-tertiary);
 }
+
+/* ===============================
+   PROJECT TITLE LOGO + ANIMATION
+================================ */
+
+.project-title-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.project-title-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.20);
+}
+
+.project-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.project-title-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: inherit;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-title-text::after {
+  width: 100%;
+}
+
 
 /* =========================
    WHY ME
