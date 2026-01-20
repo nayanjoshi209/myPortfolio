@@ -1,3 +1,4 @@
+
 /* =========================
    GLOBAL RESET
 ========================= */
@@ -16,50 +17,6 @@ html {
 /* =========================
    THEME VARIABLES
 ========================= */
-:root {
-  /* Dark Theme (Default) - Unified Golden Theme */
-  --bg-primary: radial-gradient(circle at top, #1a1a1a, #0a0a0a);
-  --bg-secondary: rgba(30, 30, 30, 0.85);
-  --bg-hover: rgba(40, 40, 40, 0.95);
-  --text-primary: #f0f0f0;
-  --text-secondary: #d0d0d0;
-  --text-tertiary: #b0b0b0;
-  --accent-color: #ffbf00; /* Golden Yellow */
-  --accent-color-light: #ffd700; /* Lighter Gold */
-  --accent-color-dark: #ff9f00; /* Darker Gold */
-  --accent-gradient: linear-gradient(135deg, #ffbf00, #ff9f00);
-  --shadow-color: rgba(0, 0, 0, 0.6);
-  --shadow-hover: rgba(0, 0, 0, 0.8);
-  --border-color: rgba(255, 191, 0, 0.15);
-  --highlight-bg: linear-gradient(145deg, rgba(255, 191, 0, 0.12), transparent);
-  --theme-icon: #ffbf00;
-}
-
-body.light-theme {
-  /* Light Theme - Unified Golden Theme */
-  --bg-primary: radial-gradient(circle at top, #f8f9fa, #e9ecef);
-  --bg-secondary: rgba(255, 255, 255, 0.9);
-  --bg-hover: rgba(255, 255, 255, 0.98);
-  --text-primary: #222;
-  --text-secondary: #555;
-  --text-tertiary: #777;
-  --accent-color: #ff9f00;
-  --accent-color-light: #ffbf00;
-  --accent-color-dark: #ff7f00;
-  --accent-gradient: linear-gradient(135deg, #ff9f00, #ff7f00);
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
-  --border-color: rgba(255, 159, 0, 0.15);
-  --highlight-bg: linear-gradient(145deg, rgba(255, 159, 0, 0.1), transparent);
-  --theme-icon: #ff9f00;
-}
-
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  min-height: 100vh;
-}
-
 /* ===============================
    THEME TOGGLE (UPDATED + FIXED)
 ================================= */
@@ -130,10 +87,10 @@ body {
 }
 
 /* -------------------------------
-   MOON (Soft Golden)
+   MOON (Soft White/Blue)
 -------------------------------- */
 .moon {
-  color: #FFBF00; /* Golden color for moon */
+  color: #E6EEFF;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.55) rotate(-90deg);
 
@@ -159,7 +116,117 @@ body.dark .moon {
 }
 
 .theme-toggle:hover .moon {
-  filter: drop-shadow(0 0 10px rgba(255, 191, 0, 0.55));
+  filter: drop-shadow(0 0 10px rgba(230, 238, 255, 0.55));
+}
+
+
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: radial-gradient(circle at top, #1f1f1f, #0b0b0b);
+  --bg-secondary: rgba(255, 255, 255, 0.08);
+  --bg-hover: rgba(255, 255, 255, 0.14);
+  --text-primary: #eaeaea;
+  --text-secondary: #cfcfcf;
+  --text-tertiary: #d6d6d6;
+  --accent-color: #ffbf00;
+  --accent-gradient: linear-gradient(135deg, #ffbf00, #ff9f00);
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --shadow-hover: rgba(0, 0, 0, 0.9);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --highlight-bg: linear-gradient(145deg, rgba(255, 191, 0, 0.14), transparent);
+  --theme-icon: #ffbf00;
+}
+
+body.light-theme {
+  /* Light Theme */
+  --bg-primary: radial-gradient(circle at top, #f5f7fa, #e4e8f0);
+  --bg-secondary: rgba(255, 255, 255, 0.85);
+  --bg-hover: rgba(255, 255, 255, 0.95);
+  --text-primary: #222;
+  --text-secondary: #555;
+  --text-tertiary: #666;
+  --accent-color: #ff9f00;
+  --accent-gradient: linear-gradient(135deg, #ff9f00, #ff7f00);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --highlight-bg: linear-gradient(145deg, rgba(255, 159, 0, 0.12), transparent);
+  --theme-icon: #ff9f00;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--bg-secondary);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 12px 40px var(--shadow-hover);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  width: 26px;
+  height: 26px;
+  position: relative;
+}
+
+.sun,
+.moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  fill: var(--theme-icon);
+}
+
+.sun {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.moon {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5) rotate(-90deg);
+}
+
+body.light-theme .sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5) rotate(90deg);
+}
+
+body.light-theme .moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 
 /* Star animation for moon */
@@ -225,7 +292,7 @@ body:not(.light-theme) .star {
 .profile:hover {
   background: var(--bg-hover);
   box-shadow:
-    0 0 35px rgba(255, 191, 0, 0.25),
+    0 0 35px rgba(220, 220, 220, 0.45),
     0 30px 80px var(--shadow-hover);
   transform: translateY(-6px);
 }
@@ -244,7 +311,7 @@ body:not(.light-theme) .star {
 
 .profile:hover img {
   transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(255, 191, 0, 0.4);
+  box-shadow: 0 0 30px rgba(220, 220, 220, 0.6);
 }
 
 .profile h2 {
@@ -330,7 +397,6 @@ h1 span {
   padding: 12px 20px;
   border-radius: 30px;
   background: var(--bg-secondary);
-  border: 1px solid rgba(255, 191, 0, 0.1);
   box-shadow: 0 10px 25px var(--shadow-color);
   transition: all 0.4s ease;
 }
@@ -339,23 +405,25 @@ h1 span {
   background: var(--bg-hover);
   transform: translateY(-3px);
   box-shadow: 0 15px 35px var(--shadow-hover);
-  border-color: rgba(255, 191, 0, 0.3);
 }
 
 /* =========================
-   PROJECT DETAILS STYLING (Updated to Golden Theme)
+   PROJECT DETAILS STYLING
+========================= */
+/* =========================
+   PROJECT DETAILS STYLING (GOLDEN THEME)
 ========================= */
 
 .project-card h4 {
   font-size: 13px;
   margin-top: 12px;
   font-weight: 700;
-  color: var(--accent-color-light);
+  color: var(--accent-color);
 }
 
 .project-desc {
   font-size: 13px;
-  opacity: 0.9;
+  opacity: 0.92;
   margin-top: 10px;
   line-height: 1.6;
   color: var(--text-secondary);
@@ -372,11 +440,11 @@ h1 span {
   font-size: 12.8px;
   margin-bottom: 6px;
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.92;
   color: var(--text-tertiary);
 }
 
-/* Tech tags - Updated to Golden */
+/* ✅ Tech tags (Golden) */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -389,19 +457,21 @@ h1 span {
   border-radius: 14px;
   font-size: 12px;
   font-weight: 700;
-  background: rgba(255, 191, 0, 0.1);
-  border: 1px solid rgba(255, 191, 0, 0.2);
-  color: var(--accent-color);
+
+  background: rgba(255, 191, 0, 0.12);
+  border: 1px solid rgba(255, 191, 0, 0.28);
+  color: var(--text-primary);
+
   transition: 0.25s ease;
 }
 
 .tech-tags span:hover {
   transform: translateY(-2px);
-  background: rgba(255, 191, 0, 0.2);
-  border-color: rgba(255, 191, 0, 0.4);
+  background: rgba(255, 191, 0, 0.22);
+  border-color: rgba(255, 191, 0, 0.55);
 }
 
-/* Buttons - Updated to Golden */
+/* ✅ Buttons (Golden) */
 .project-links {
   margin-top: 14px;
 }
@@ -414,17 +484,60 @@ h1 span {
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s ease;
-  border: 1px solid rgba(255, 191, 0, 0.3);
-  background: rgba(255, 191, 0, 0.1);
-  color: var(--accent-color);
+
+  border: 1px solid rgba(255, 191, 0, 0.35);
+  background: rgba(255, 191, 0, 0.12);
+  color: var(--text-primary);
 }
 
 .project-links .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 191, 0, 0.25);
-  background: rgba(255, 191, 0, 0.2);
-  border-color: rgba(255, 191, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 191, 0, 0.28);
+  border-color: rgba(255, 191, 0, 0.7);
+  background: rgba(255, 191, 0, 0.18);
 }
+
+.project-title-text {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  position: relative;
+  transition: 0.35s ease;
+
+  /* ✅ Golden title color */
+  color: var(--accent-color);
+
+  /* ✅ Soft glow */
+  text-shadow: 0 0 12px rgba(255, 191, 0, 0.35);
+}
+
+.project-title-link:hover .project-title-text {
+  color: #ffd36a;
+  text-shadow: 0 0 18px rgba(255, 191, 0, 0.65);
+  transform: translateY(-1px);
+}
+
+/* ✅ Golden underline */
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-color);
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-title-text::after {
+  width: 100%;
+}
+
+
+/* ===============================
+   PROJECT TITLE LOGO + ANIMATION (GOLDEN)
+================================ */
 
 .project-title-link {
   display: flex;
@@ -434,23 +547,22 @@ h1 span {
   width: fit-content;
   padding: 8px 12px;
   border-radius: 14px;
+
   transition: 0.3s ease;
-  border: 1px solid rgba(255, 191, 0, 0.2);
+  border: 1px solid rgba(255, 191, 0, 0.22);
   background: rgba(255, 191, 0, 0.08);
 }
 
 .project-title-link:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 191, 0, 0.5);
-  box-shadow: 0 10px 25px rgba(255, 191, 0, 0.15);
-  background: rgba(255, 191, 0, 0.15);
+  border-color: rgba(255, 191, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(255, 191, 0, 0.25);
 }
 
 .project-icon {
   width: 22px;
   height: 22px;
-  border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
   transition: 0.35s ease;
 }
 
@@ -461,8 +573,10 @@ h1 span {
 .project-title-text {
   font-size: 16px;
   font-weight: 800;
-  color: inherit;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
   position: relative;
+  transition: 0.3s ease;
 }
 
 .project-title-text::after {
@@ -479,6 +593,34 @@ h1 span {
 
 .project-title-link:hover .project-title-text::after {
   width: 100%;
+}
+
+/* =========================
+   PROJECTS GRID + CARD (GOLDEN MATCH)
+========================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 26px;
+  border-radius: 26px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  background: var(--bg-hover);
+  transform: translateY(-14px);
+
+  box-shadow:
+    0 45px 95px var(--shadow-hover),
+    0 0 0 1px rgba(255, 191, 0, 0.18);
 }
 
 /* =========================
@@ -523,7 +665,7 @@ h1 span {
   transform: translateY(-10px);
   box-shadow:
     0 30px 70px var(--shadow-hover),
-    inset 0 0 0 1px rgba(255, 191, 0, 0.15);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 .edu-year {
@@ -545,6 +687,66 @@ h1 span {
   color: var(--text-tertiary);
 }
 
+/* ===============================
+   PROJECT TITLE LOGO + ANIMATION
+================================ */
+
+.project-title-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.22);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.project-title-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.20);
+}
+
+.project-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.project-title-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: inherit;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.project-title-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.35s ease;
+}
+
+.project-title-link:hover .project-title-text::after {
+  width: 100%;
+}
+
+
 /* =========================
    WHY ME
 ========================= */
@@ -552,7 +754,6 @@ h1 span {
   background: var(--highlight-bg);
   padding: 45px;
   border-radius: 35px;
-  border: 1px solid rgba(255, 191, 0, 0.2);
 }
 
 .why-grid {
@@ -583,7 +784,6 @@ h1 span {
   color: var(--accent-color);
   text-decoration: none;
   transition: all 0.4s ease;
-  border: 1px solid rgba(255, 191, 0, 0.2);
 }
 
 .links a:hover {
@@ -591,7 +791,6 @@ h1 span {
   color: #000;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 191, 0, 0.4);
-  border-color: transparent;
 }
 
 /* =========================
@@ -793,6 +992,8 @@ h1 span {
   left: 0;
 }
 
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -813,6 +1014,13 @@ footer {
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* .reveal {
+  opacity: 0;
+  transform: translateY(45px) scale(0.98);
+  filter: blur(2px);
+} */
+
 
 .reveal.show {
   opacity: 1;
